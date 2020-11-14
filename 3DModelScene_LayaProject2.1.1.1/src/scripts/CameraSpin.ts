@@ -94,8 +94,8 @@ export default class CameraSpin extends Laya.Script3D {
         //this.cameraNode.transform.lookAt(this.camViewTargetPos, this.VEC_UP); 
         var qua = Mathf.GetToTargetRotation(Mathf.Vec_Sub(this.camViewTargetPos, this.cameraPos)); 
         this.cameraRot = qua;
-
         this.AdjustValue();
+        this.cameraPos = Mathf.Vec_Add(Mathf.VecDotQua(new Laya.Vector3(0, 0, this.distance), this.rotation), this.camViewTargetPos);
     }
 
     /**
